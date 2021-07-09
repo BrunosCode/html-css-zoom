@@ -22,6 +22,11 @@ body {
     color: var(--white);
 }
 
+button {
+    color: var(--white);
+    border: none;
+}
+
 .btn.btn-green {
     color: var(--green);
 }
@@ -49,11 +54,8 @@ header {
     }
 
     header .btn {
-        border: none;
         padding: .75em .75em;
         border-radius: .5em;
-        color: var(--white);
-
     }
     .header-left .btn {
         background-color: rgba(0, 0, 0, 0.2);
@@ -61,7 +63,7 @@ header {
     .header-right .btn {
         background-color: rgba(256, 256, 256, 0.05);
     }
-    i:not(:only-child) {
+    header i:not(:only-child) {
         margin-right: .5em;
 }
 
@@ -71,7 +73,7 @@ main {
     margin: auto;
     flex-wrap: wrap;
     align-content: center;
-    height: calc(100vh - 40px - 50px);
+    height: calc(100vh - 40px - 70px);
     width: 90%;
     }
     .person {
@@ -105,3 +107,50 @@ main {
     .info i {
         margin-right: .5em;
 }
+
+/* side arrows */
+aside {
+    position: absolute;
+    top: 50%;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: .2em;
+    }
+    .footer-left,
+    .footer-right {
+        width: 20%;
+    }
+    .footer-left {
+        text-align: left;
+    }
+    .footer-center {
+        text-align: center;
+        flex-grow: 1;
+    } 
+    .footer-right {
+        text-align: right;
+    }
+    footer .btn {
+        text-align: center;
+        background-color: unset;
+        border: none;
+        padding: .3em .5em;
+        color: var(--gray);
+    }
+    footer i {
+        font-size: 20px;
+        margin-bottom: .2em;
+    }
+    footer i:nth-child(2) {
+        margin-left: .5em;
+    }
+    .btn-exit {
+        background-color: var(--red);
+        border-radius: .5em;
+        padding: .5em 2em;
+    }

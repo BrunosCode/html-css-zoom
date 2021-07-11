@@ -1,11 +1,15 @@
 /* color variables  */
 :root {
     --white: #FEFEFE;
-    --grey: #AAABAC;
+    --gray: #AAABAC;
     --black: #1A1C1E;
     --green: #23D959;
     --red: #E02828;
     --blue: #2DB9FF;
+
+    --lighter: rgba(255, 255, 255, 0.05);
+    --darker: rgba(0, 0, 0, 0.2);
+    --darkest: rgba(0, 0, 0, 0.4);
 }
 
 /* reset  */
@@ -58,10 +62,10 @@ header {
         border-radius: .5em;
     }
     .header-left .btn {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: var(--darker);
     }
     .header-right .btn {
-        background-color: rgba(256, 256, 256, 0.05);
+        background-color: var(--lighter);
     }
     header i:not(:only-child) {
         margin-right: .5em;
@@ -82,7 +86,7 @@ main {
         margin: .2em;
         border-radius: .5em;
         overflow: hidden;
-        background-color: rgba(256, 256, 256, 0.05);
+        background-color: var(--lighter);
         text-align: center;
         /* background-image: url("../img/placeholder.svg");
         background-size: contain;
@@ -98,7 +102,7 @@ main {
         left: .5em;
         padding: .2em .5em;
         border-radius: .5em;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: var(--darker);
     }
     .mute {
         color: var(--red);
@@ -120,8 +124,8 @@ footer {
     display: flex;
     align-items: center;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: .2em;
+    background-image: linear-gradient(var(--lighter), var(--darker));
+    padding: .3em;
     }
     .footer-left,
     .footer-right {
@@ -138,12 +142,22 @@ footer {
         text-align: center;
         background-color: unset;
         border: none;
-        padding: .3em .5em;
+        position: relative;
+        padding: .5em 1em;
         color: var(--gray);
+        border-radius: .5em;
+    }
+    footer .btn:first-of-type {
+        margin-left: .5em;
+        padding: .5em 1.5em;
+    }
+    footer .btn:hover,
+    footer .btn:focus {
+        background-color: var(--lighter);
     }
     footer i {
         font-size: 24px;
-        margin-bottom: .2em;
+        margin-bottom: .3em;
     }
     footer .double-icon i {
         display: inline-block;
@@ -152,7 +166,7 @@ footer {
         line-height: 26px;
         border-radius: .2em;
         font-size: 16px;
-        background-color: var(--white);
+        background-color: var(--gray);
         color: var(--black);
     }
     footer .btn-green i {
@@ -176,4 +190,28 @@ footer {
         border-radius: .5em;
         padding: .5em 2em;
         font-weight: bold;
+    }
+    /* interective component in the footer */
+    .menu-arrow {
+        position: absolute;
+        font-size: 16px;
+        padding: .5em;
+        border-radius: .5em;
+        top: 0;
+        right: 5%;
+    }
+    .menu-arrow:hover,
+    .menu-arrow:focus {
+        background-color: var(--darker);
+    }
+    .btn.partecipants {
+        padding: .5em 3em;
+    }
+    .partecipants::after {
+        /* content: attr(data-value); */
+        content: "25";
+        position: absolute;
+        top: .2em;
+        right: 3.2em;
 }
+
